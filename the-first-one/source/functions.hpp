@@ -21,13 +21,19 @@ void process_START(
 
 void display_FIRST_HELLO(ENextFrame& nextFrame, std::uint32_t& frameTimer);
 
-void process_FIRST_HELLO(ENextFrame& /*nextFrame*/, const bool pressedAnywhere);
+void process_FIRST_HELLO(ENextFrame& nextFrame, const bool pressedAnywhere);
 
 void display_FIRST_TOUCH(ENextFrame& nextFrame, std::uint32_t& frameTimer);
 
 void process_FIRST_TOUCH(ENextFrame& nextFrame, std::vector<touchPosition> recentTouches);
 
-void display_WILL_YOU_HELP(ENextFrame& /*nextFrame*/, std::uint32_t& /*frameTimer*/);
+void display_WILL_YOU_HELP(ENextFrame& nextFrame, std::uint32_t& frameTimer);
+
+void process_WILL_YOU_HELP(ENextFrame& nextFrame, const bool pressedOnRight);
+
+void display_AGREED_TO_HELP(ENextFrame& nextFrame, std::uint32_t& frameTimer);
+
+void process_AGREED_TO_HELP(ENextFrame& nextFrame, const bool pressedAnywhere);
 
 void displayDebugNextStage();
 
