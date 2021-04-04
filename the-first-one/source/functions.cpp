@@ -74,8 +74,9 @@ void processNextFrame(
             break;
     }
 
-    printf("\x1b[29;0H                               frame: %d", frameNumber);
-    printf("\x1b[30;0H                               state: %d", nextFrame);
+    // uncomment for a simple debug
+    // printf("\x1b[29;0H                               frame: %d", frameNumber);
+    // printf("\x1b[30;0H                               state: %d", nextFrame);
 }
 
 void displayBlank()
@@ -360,6 +361,40 @@ void process_AGREED_TO_HELP(ENextFrame& nextFrame, const bool pressedAnywhere)
     if (pressedAnywhere) {
         nextFrame = ENextFrame::LABYRINTH;
     }
+}
+
+void display_LABYRINTH()
+{
+    printf( "\x1b[1;0H@@@@@                                         @@@@");
+    printf( "\x1b[2;0H@@@@@ @@@@@@@@@@@   @@@@@@@@@   @@@@@@@@@@@@@@@@@@");
+    printf( "\x1b[3;0H@@@@@ @@@@                                    @@@@");
+    printf( "\x1b[4;0H@@@@@ @@@                                      @@@");
+    printf( "\x1b[5;0H@@@@@ @@@                              @@@@@@@@@@@");
+    printf( "\x1b[6;0H@@@@@ @@@                              @@@@@@@@@@@");
+    printf( "\x1b[7;0H@@@@@ @@@                              @@@@@@@@@@@");
+    printf( "\x1b[8;0H@@@/( (/(                              @@@@@@@@@@@");
+    printf( "\x1b[9;0H@@@                   @@@@@@@@                    ");
+    printf("\x1b[10;0H@@@                   @@@@@@@@                    ");
+    printf("\x1b[11;0H@@@                   @@@@@@@@                    ");
+    printf("\x1b[12;0H@@@@@  @@             @@@@@@@@                    ");
+    printf("\x1b[13;0H@@@@@  @@           @@@@@@@@@@                    ");
+    printf("\x1b[14;0H@@@@@  @@           @@@@@@@@@@                    ");
+    printf("\x1b[15;0H@@@@   @@            @@@@@@@@@                    ");
+    printf("\x1b[16;0H@@@     @             @@@@@@@@      @@@ @@@       ");
+    printf("\x1b[17;0H@@@     @             @@@@@@@@      @@@ @@@       ");
+    printf("\x1b[18;0H@@@     @             @@@@@@@@      @(( (@@       ");
+    printf("\x1b[19;0H@@@     @             @@@@@@@@      @             ");
+    printf("\x1b[20;0H@@@@@@@@@             @@@@@@@@      @    @@       ");
+    printf("\x1b[21;0H@@@@@@@@@             @@@@@@@@      @    @@       ");
+    printf("\x1b[22;0H@@@@@@@@@             /(((/(((      @    @@       ");
+    printf("\x1b[23;0H                                         @@       ");
+    printf("\x1b[24;0H                      @@@@@@@@      @@@@@@@       ");
+    printf("\x1b[25;0H                      @@@@@@@@                    ");
+    printf("\x1b[26;0H                      @@@@@@@@                    ");
+    printf("\x1b[27;0H                  @@@@@@@@@@@@                    ");
+    printf("\x1b[28;0H     I'M HERE     @@@@@@@@@@@@                    ");
+    printf("\x1b[29;0H                  @@@@@@@@@@@@                    ");
+    printf("\x1b[30;0H                  @@@@@@@@@@@@              EXIT  ");
 }
 
 void display_FACE()

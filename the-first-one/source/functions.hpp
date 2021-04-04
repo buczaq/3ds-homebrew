@@ -35,6 +35,8 @@ void display_AGREED_TO_HELP(ENextFrame& nextFrame, std::uint32_t& frameTimer);
 
 void process_AGREED_TO_HELP(ENextFrame& nextFrame, const bool pressedAnywhere);
 
+void display_LABYRINTH();
+
 void display_FACE();
 
 void displayDebugNextStage();
