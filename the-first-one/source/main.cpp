@@ -18,7 +18,6 @@ int main(int argc, char **argv) {
     std::vector<touchPosition> recentTouches{};
     recentTouches.resize(60);
 
-    // Main loop
     while (aptMainLoop())
     {
         hidScanInput();
@@ -30,18 +29,6 @@ int main(int argc, char **argv) {
         }
 
         processNextFrame(nextFrame, keyDown, frameTimer, touch, recentTouches);
-        // hidScanInput();
-        
-        // touchPosition touch;
-        // hidTouchRead(&touch);
-        // printf("\x1b[1;0HX coordinate: %i       ",touch.px);
-        // printf("\x1b[2;0HdY coordinate: %i       ",touch.py);
-
-        // u32 kHeld = hidKeysHeld();
-        // if (kHeld & KEY_TOUCH)
-        //     printf("\x1b[3;0HIs Active: TRUE ");
-        // else
-        //     printf("\x1b[3;0HIs Active: FALSE");
 
         gfxFlushBuffers();
         gfxSwapBuffers();

@@ -35,9 +35,15 @@ void display_AGREED_TO_HELP(ENextFrame& nextFrame, std::uint32_t& frameTimer);
 
 void process_AGREED_TO_HELP(ENextFrame& nextFrame, const bool pressedAnywhere);
 
-void display_LABYRINTH();
+void display_LABYRINTH(ENextFrame& nextFrame);
 
-void display_FACE();
+void process_LABYRINTH(ENextFrame& nextFrame, std::vector<touchPosition> recentTouches);
+
+void display_ESCAPED(ENextFrame& nextFrame, std::uint32_t& frameTimer);
+
+void display_FACE(ENextFrame& nextFrame, std::uint32_t& frameTimer);
+
+void display_ENDING();
 
 void displayDebugNextStage();
 

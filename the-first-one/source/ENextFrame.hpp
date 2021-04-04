@@ -10,5 +10,9 @@ enum ENextFrame {
     WILL_YOU_HELP_USER_ACTION = 6,
     AGREED_TO_HELP = 7,
     AGREED_TO_HELP_USER_ACTION = 8,
-    LABYRINTH = 9
+    LABYRINTH = 9,
+    LABYRINTH_USER_ACTION = 10,
+    ESCAPED = 11,
+    FACE = 12,
+    ENDING = 13
 };
