@@ -3,9 +3,9 @@
 #include "ENextFrame.hpp"
 
 #include <3ds.h>
-#include <memory>
 #include <cstdint>
 #include <cstdio>
+#include <memory>
 #include <vector>
 
 void updateRecentTouches(std::vector<touchPosition>& recentTouches, touchPosition touch);
@@ -44,8 +44,6 @@ void display_ESCAPED(ENextFrame& nextFrame, std::uint32_t& frameTimer);
 void display_FACE(ENextFrame& nextFrame, std::uint32_t& frameTimer);
 
 void display_ENDING();
-
-void displayDebugNextStage();
 
 void processNextFrame(
     ENextFrame& nextFrame,
