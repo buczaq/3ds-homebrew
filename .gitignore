@@ -4,3 +4,6 @@
 makerom
 *.cia
 *.rsf
+.vscode
+*.smdh
+
