@@ -2,6 +2,14 @@
 
 #include <3ds.h>
 #include <array>
+#include <cstring>
+
+namespace {
+
+off_t size;
+unsigned char* buffer;
+
+} // namespace
 
 // Notes from my experience so far:
 // - there are 30 lines of text that can fit on top screen
@@ -636,4 +644,27 @@ void display_ENDING()
     printf("\x1b[28;0H                                                  ");
     printf("\x1b[29;0H                                                  ");
     printf("\x1b[30;0H                                                  ");
+}
+
+// Code borrowed from: https://github.com/theKlanc/SoundExample3DS
+void loadAudio(const char *audio)
+{
+	FILE *file = fopen(audio, "rb");
+	fseek(file, 0, SEEK_END);
+	size = ftell(file);
+	fseek(file, 0, SEEK_SET);
+	buffer = static_cast<unsigned char*>(linearAlloc(size));
+	fread(buffer, 1, size, file);
+	fclose(file);
+	csndPlaySound(8, SOUND_FORMAT_16BIT | SOUND_REPEAT, 48000, 1, 0, buffer, buffer, size);
+	linearFree(buffer);
+}
+
+void stopAudio(void)
+{
+	csndExecCmds(true);
+	CSND_SetPlayState(0x8, 0);
+	memset(buffer, 0, size);
+	GSPGPU_FlushDataCache(buffer, size);
+	linearFree(buffer);
 }

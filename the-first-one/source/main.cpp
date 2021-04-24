@@ -23,6 +23,8 @@ int main(int argc, char **argv) {
     // 60 recent touches kept in this vector.
     recentTouches.resize(60);
 
+    csndInit();
+
     // one loop = one frame
     while (aptMainLoop())
     {
@@ -32,6 +34,10 @@ int main(int argc, char **argv) {
         // ...and touch position.
         touchPosition touch;
         hidTouchRead(&touch);
+
+        if (keyDown & KEY_START) {
+            loadAudio("audio/Tranquility2.bin");
+        }
 
         if (!(frame % touchUpdateFrequency)) {
             updateRecentTouches(recentTouches, touch);
@@ -49,6 +55,8 @@ int main(int argc, char **argv) {
     }
 
     // Never reached, but left pro forma.
+    stopAudio();
+    csndExit();
     gfxExit();
     return 0;
 }

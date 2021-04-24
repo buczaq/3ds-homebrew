@@ -53,3 +53,6 @@ void processNextFrame(
     std::vector<touchPosition> recentTouches
 );
 
+void loadAudio(const char *audio);
+
+void stopAudio(void);
